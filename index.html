@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Velora Camera — Privacy Policy</title>
+    <meta name="description" content="Privacy Policy for Velora Camera — Professional real-time filter camera app for iOS.">
+    <link rel="icon" type="image/png" href="assets/512.png">
+    <style>
+        /* ═══════════════════════════════════════════
+           DESIGN SYSTEM — Velora Camera Brand
+           ═══════════════════════════════════════════ */
+
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #12121a;
+            --bg-card: #16161f;
+            --bg-card-hover: #1c1c28;
+            --accent: #c8a04a;
+            --accent-soft: rgba(200, 160, 74, 0.12);
+            --accent-glow: rgba(200, 160, 74, 0.25);
+            --text-primary: #f0ede6;
+            --text-secondary: #8a8794;
+            --text-muted: #5a5766;
+            --border: rgba(255, 255, 255, 0.06);
+            --border-accent: rgba(200, 160, 74, 0.2);
+            --radius: 16px;
+            --radius-sm: 10px;
+            --font: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
+            --mono: 'SF Mono', 'Fira Code', 'Consolas', monospace;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        body {
+            font-family: var(--font);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* ═══ BACKGROUND EFFECTS ═══ */
+
+        .bg-gradient {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 100vh;
+            background:
+                radial-gradient(ellipse 60% 50% at 50% 0%, rgba(200, 160, 74, 0.06) 0%, transparent 100%),
+                radial-gradient(ellipse 40% 30% at 80% 20%, rgba(100, 80, 200, 0.04) 0%, transparent 100%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        /* ═══ HEADER ═══ */
+
+        header {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 80px 24px 48px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .logo-container {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+        }
+
+        .logo {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.4),
+                0 0 0 1px rgba(255, 255, 255, 0.06),
+                0 0 60px rgba(200, 160, 74, 0.1);
+        }
+
+        header h1 {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        header h1 span {
+            color: var(--accent);
+        }
+
+        .subtitle {
+            font-size: 14px;
+            color: var(--text-secondary);
+            font-weight: 400;
+            margin-bottom: 20px;
+        }
+
+        .badge-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 100px;
+            font-size: 12px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        .badge svg {
+            width: 14px;
+            height: 14px;
+            flex-shrink: 0;
+        }
+
+        .badge.gold {
+            border-color: var(--border-accent);
+            color: var(--accent);
+        }
+
+        .badge.gold svg {
+            fill: var(--accent);
+        }
+
+        /* ═══ NAVIGATION ═══ */
+
+        nav {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            padding: 0 24px;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        nav::-webkit-scrollbar { display: none; }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 4px;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 8px 0;
+        }
+
+        nav a {
+            display: block;
+            padding: 8px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--text-muted);
+            text-decoration: none;
+            border-radius: var(--radius-sm);
+            white-space: nowrap;
+            transition: all 0.2s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-primary);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        /* ═══ MAIN CONTENT ═══ */
+
+        main {
+            position: relative;
+            z-index: 10;
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 48px 24px 120px;
+        }
+
+        .effective-date {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 16px;
+            background: var(--accent-soft);
+            border: 1px solid var(--border-accent);
+            border-radius: var(--radius-sm);
+            font-size: 13px;
+            font-weight: 500;
+            color: var(--accent);
+            margin-bottom: 48px;
+        }
+
+        section {
+            margin-bottom: 48px;
+            scroll-margin-top: 64px;
+        }
+
+        section h2 {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--text-primary);
+            margin-bottom: 16px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            letter-spacing: -0.3px;
+        }
+
+        section h2 .num {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 28px;
+            height: 28px;
+            border-radius: 8px;
+            background: var(--accent-soft);
+            color: var(--accent);
+            font-size: 13px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-top: 24px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            font-size: 15px;
+            margin-bottom: 14px;
+            line-height: 1.75;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 16px;
+        }
+
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-secondary);
+            font-size: 15px;
+            line-height: 1.65;
+        }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 10px;
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: var(--accent);
+            opacity: 0.6;
+        }
+
+        /* Info cards */
+        .info-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin-bottom: 16px;
+            transition: border-color 0.2s ease;
+        }
+
+        .info-card:hover {
+            border-color: var(--border-accent);
+        }
+
+        .info-card h4 {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .info-card h4 .icon {
+            font-size: 16px;
+        }
+
+        .info-card p {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+
+        .highlight-box {
+            background: var(--accent-soft);
+            border: 1px solid var(--border-accent);
+            border-radius: var(--radius);
+            padding: 20px 24px;
+            margin: 20px 0;
+        }
+
+        .highlight-box p {
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0;
+            font-size: 14px;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration: none;
+            transition: opacity 0.2s;
+        }
+
+        a:hover {
+            opacity: 0.8;
+            text-decoration: underline;
+        }
+
+        code {
+            font-family: var(--mono);
+            font-size: 13px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 2px 7px;
+            border-radius: 5px;
+            color: var(--accent);
+        }
+
+        /* ═══ FOOTER ═══ */
+
+        footer {
+            position: relative;
+            z-index: 10;
+            border-top: 1px solid var(--border);
+            padding: 40px 24px;
+            text-align: center;
+        }
+
+        .footer-logo {
+            width: 36px;
+            height: 36px;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            opacity: 0.6;
+        }
+
+        footer p {
+            font-size: 13px;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+        }
+
+        footer .links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 12px;
+        }
+
+        footer .links a {
+            font-size: 13px;
+            color: var(--text-secondary);
+            font-weight: 500;
+        }
+
+        /* ═══ RESPONSIVE ═══ */
+
+        @media (max-width: 480px) {
+            header { padding: 60px 20px 36px; }
+            header h1 { font-size: 24px; }
+            main { padding: 36px 20px 80px; }
+            section h2 { font-size: 18px; }
+            .info-card { padding: 16px 18px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bg-gradient"></div>
+
+    <!-- ═══════════ HEADER ═══════════ -->
+    <header>
+        <div class="logo-container">
+            <img src="assets/512.png" alt="Velora Camera" class="logo">
+        </div>
+        <h1>Velora <span>Camera</span></h1>
+        <p class="subtitle">Professional Real-Time Filter Camera for iOS</p>
+        <div class="badge-row">
+            <span class="badge gold">
+                <svg viewBox="0 0 24 24"><path d="M12 2L9.19 8.63 2 9.24l5.46 4.73L5.82 21 12 17.27 18.18 21l-1.63-7.03L22 9.24l-7.19-.61z"/></svg>
+                70+ Pro Filters
+            </span>
+            <span class="badge">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 15.5A3.5 3.5 0 0 1 8.5 12 3.5 3.5 0 0 1 12 8.5a3.5 3.5 0 0 1 3.5 3.5 3.5 3.5 0 0 1-3.5 3.5m7.43-2.53c.04-.32.07-.64.07-.97s-.03-.66-.07-.98l2.11-1.65a.5.5 0 0 0 .12-.64l-2-3.46a.5.5 0 0 0-.61-.22l-2.49 1a7.29 7.29 0 0 0-1.69-.98l-.38-2.65A.49.49 0 0 0 14 2h-4a.49.49 0 0 0-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1a.5.5 0 0 0-.61.22l-2 3.46a.49.49 0 0 0 .12.64l2.11 1.65c-.04.32-.07.65-.07.98s.03.66.07.98l-2.11 1.65a.5.5 0 0 0-.12.64l2 3.46a.5.5 0 0 0 .61.22l2.49-1c.52.4 1.08.72 1.69.98l.38 2.65c.05.24.26.42.49.42h4c.24 0 .44-.18.49-.42l.38-2.65c.61-.26 1.17-.59 1.69-.98l2.49 1a.5.5 0 0 0 .61-.22l2-3.46a.5.5 0 0 0-.12-.64l-2.11-1.65z"/></svg>
+                Metal GPU Rendering
+            </span>
+            <span class="badge">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
+                Privacy First
+            </span>
+        </div>
+    </header>
+
+    <!-- ═══════════ NAVIGATION ═══════════ -->
+    <nav>
+        <ul>
+            <li><a href="#overview">Overview</a></li>
+            <li><a href="#data-collection">Data Collection</a></li>
+            <li><a href="#camera-photos">Camera & Photos</a></li>
+            <li><a href="#subscriptions">Subscriptions</a></li>
+            <li><a href="#third-party">Third Party</a></li>
+            <li><a href="#children">Children</a></li>
+            <li><a href="#security">Security</a></li>
+            <li><a href="#rights">Your Rights</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- ═══════════ MAIN CONTENT ═══════════ -->
+    <main>
+
+        <div class="effective-date">
+            📅 Effective Date: February 24, 2026
+        </div>
+
+        <!-- 1. OVERVIEW -->
+        <section id="overview">
+            <h2><span class="num">1</span> Overview</h2>
+            <p>
+                Welcome to <strong>Velora Camera</strong> ("App", "we", "us", "our"). We are committed to protecting your privacy
+                and personal data. This Privacy Policy explains how our iOS camera application handles information when you use our services.
+            </p>
+            <p>
+                Velora Camera is a professional real-time filter camera application that applies cinematic filters and adjustments
+                to your photos and videos using Apple's Metal GPU framework and Core Image — all processing happens <strong>entirely on your device</strong>.
+            </p>
+
+            <div class="highlight-box">
+                <p>🔒 Core Principle: Velora Camera is designed with a privacy-first architecture. Your photos, videos, and camera data never leave your device and are never uploaded to any server.</p>
+            </div>
+        </section>
+
+        <!-- 2. DATA COLLECTION -->
+        <section id="data-collection">
+            <h2><span class="num">2</span> Information We Collect</h2>
+
+            <h3>Data We Do NOT Collect</h3>
+            <p>Velora Camera does not collect, transmit, or store any of the following:</p>
+            <ul>
+                <li>Photos, videos, or camera feed data</li>
+                <li>Personal identification information (name, email, phone number)</li>
+                <li>Location data or GPS coordinates</li>
+                <li>Contacts or address book data</li>
+                <li>Browsing history or search queries</li>
+                <li>Device identifiers for tracking or advertising purposes</li>
+                <li>Biometric data (Face ID, fingerprint)</li>
+            </ul>
+
+            <h3>Data Processed Locally on Your Device</h3>
+            <ul>
+                <li><strong>Camera Feed</strong> — Real-time video frames processed by Metal GPU for filter preview at 60 FPS. Frames are never stored or transmitted.</li>
+                <li><strong>Photos & Videos</strong> — Captured media is saved directly to your iOS Photo Library. We have no access to your Photo Library content.</li>
+                <li><strong>Filter Settings</strong> — Your selected filter preset and manual adjustments (exposure, contrast, focus, etc.) are stored locally in app memory during your session.</li>
+                <li><strong>User Preferences</strong> — Settings such as grid overlay, aspect ratio, and flash mode are stored locally using iOS UserDefaults.</li>
+            </ul>
+
+            <h3>Data Processed by Third-Party Services</h3>
+            <div class="info-card">
+                <h4><span class="icon">💳</span> RevenueCat (Subscription Management)</h4>
+                <p>We use RevenueCat to manage in-app subscriptions (Pro monthly and lifetime plans). RevenueCat processes anonymized transaction data through Apple's App Store. We do not have access to your Apple ID, payment information, or billing details. RevenueCat may collect anonymous usage analytics. See <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">RevenueCat's Privacy Policy</a>.</p>
+            </div>
+        </section>
+
+        <!-- 3. CAMERA & PHOTOS -->
+        <section id="camera-photos">
+            <h2><span class="num">3</span> Camera & Photo Library Access</h2>
+            <p>Velora Camera requires the following iOS permissions to function:</p>
+
+            <div class="info-card">
+                <h4><span class="icon">📷</span> Camera Access (Required)</h4>
+                <p>Used to provide real-time camera preview with filter effects. The camera feed is processed entirely on-device via Apple's AVFoundation and Metal frameworks. No camera data is transmitted, stored externally, or shared with any third party.</p>
+            </div>
+
+            <div class="info-card">
+                <h4><span class="icon">🎤</span> Microphone Access (Video Mode)</h4>
+                <p>Required only when recording video with audio. Audio data is encoded directly into the video file saved to your Photo Library. We do not process, analyze, or transmit audio data separately.</p>
+            </div>
+
+            <div class="info-card">
+                <h4><span class="icon">🖼️</span> Photo Library Access (Save Only)</h4>
+                <p>Used exclusively to save your captured photos and videos to your iOS Photo Library. We request "Add Photos Only" permission when possible. We never read or browse your existing photos.</p>
+            </div>
+
+            <div class="highlight-box">
+                <p>⚡ All image processing — including 70+ filter presets, tone curve adjustments, manual focus control, and real-time effects — runs entirely on your device's GPU via Apple Metal. Zero network calls during camera operation.</p>
+            </div>
+        </section>
+
+        <!-- 4. SUBSCRIPTIONS -->
+        <section id="subscriptions">
+            <h2><span class="num">4</span> Subscriptions & Purchases</h2>
+            <p>Velora Camera offers optional Pro subscriptions to unlock premium filter presets and features:</p>
+            <ul>
+                <li><strong>Pro Monthly</strong> — Auto-renewing monthly subscription</li>
+                <li><strong>Pro Lifetime</strong> — One-time purchase for permanent access</li>
+            </ul>
+            <p>
+                All purchases are processed securely through <strong>Apple's App Store</strong> and managed via
+                <strong>RevenueCat</strong>. We never have access to your credit card, Apple ID, or payment method details.
+                Subscription management (cancel, renew) is handled entirely through your Apple ID Settings.
+            </p>
+            <p>
+                Free features include 7 seasonal filter presets and all camera controls. Pro unlocks 63+ additional
+                presets across 12 categories including Film, Cinematic, Portrait, Japanese Film, Korean Modern, Social, Nature, Food, and Signature Velora collections.
+            </p>
+        </section>
+
+        <!-- 5. THIRD-PARTY SERVICES -->
+        <section id="third-party">
+            <h2><span class="num">5</span> Third-Party Services</h2>
+            <p>Velora Camera uses the following third-party services:</p>
+
+            <div class="info-card">
+                <h4><span class="icon">📦</span> RevenueCat SDK</h4>
+                <p><strong>Purpose:</strong> In-app subscription management and purchase validation.<br>
+                <strong>Data shared:</strong> Anonymous app user ID, purchase transactions (via Apple).<br>
+                <strong>Privacy policy:</strong> <a href="https://www.revenuecat.com/privacy" target="_blank" rel="noopener">revenuecat.com/privacy</a></p>
+            </div>
+
+            <div class="info-card">
+                <h4><span class="icon">🍎</span> Apple Frameworks</h4>
+                <p><strong>AVFoundation, Metal, Core Image, QuickLook</strong> — All Apple system frameworks used for camera capture, GPU rendering, image processing, and media preview. These operate entirely on-device with no data transmission.</p>
+            </div>
+
+            <p>We do <strong>not</strong> use any advertising SDKs, analytics services (Firebase, Mixpanel, etc.), crash reporting tools, or social media tracking pixels.</p>
+        </section>
+
+        <!-- 6. CHILDREN'S PRIVACY -->
+        <section id="children">
+            <h2><span class="num">6</span> Children's Privacy</h2>
+            <p>
+                Velora Camera is not directed at children under the age of 13 (or the applicable minimum age in your jurisdiction).
+                We do not knowingly collect personal information from children. Since our app does not collect personal data from any user,
+                there is no children's data to manage.
+            </p>
+            <p>
+                If you believe that a child has somehow provided personal information to us, please contact us immediately and we will
+                take steps to delete such information.
+            </p>
+        </section>
+
+        <!-- 7. DATA SECURITY -->
+        <section id="security">
+            <h2><span class="num">7</span> Data Security</h2>
+            <p>We implement the following security measures:</p>
+            <ul>
+                <li><strong>On-device processing</strong> — All camera and image processing happens locally on your iPhone's GPU. No data leaves your device.</li>
+                <li><strong>No cloud storage</strong> — We operate no servers or cloud infrastructure that stores user data.</li>
+                <li><strong>iOS sandboxing</strong> — The app operates within Apple's iOS sandbox, preventing access to other apps' data.</li>
+                <li><strong>Encrypted transactions</strong> — All subscription purchases are secured by Apple's App Store encryption and payment infrastructure.</li>
+                <li><strong>Minimal permissions</strong> — We only request the iOS permissions strictly necessary for camera functionality.</li>
+            </ul>
+        </section>
+
+        <!-- 8. YOUR RIGHTS -->
+        <section id="rights">
+            <h2><span class="num">8</span> Your Rights</h2>
+            <p>
+                Since Velora Camera does not collect or store personal data, most data subject rights (access, deletion, portability)
+                are not applicable. However, you always have the right to:
+            </p>
+            <ul>
+                <li><strong>Revoke camera permissions</strong> — Via iOS Settings → Velora Camera → Camera/Microphone/Photos</li>
+                <li><strong>Delete the app</strong> — Removing the app deletes all locally stored preferences</li>
+                <li><strong>Manage subscriptions</strong> — Via iOS Settings → Apple ID → Subscriptions</li>
+                <li><strong>Request information</strong> — Contact us to ask what data (if any) is associated with your use</li>
+            </ul>
+            <p>
+                For users in the European Union (GDPR), California (CCPA), or other jurisdictions with data protection laws:
+                since we do not collect personal data, we do not sell, share, or process personal information. No opt-out is necessary.
+            </p>
+        </section>
+
+        <!-- 9. CHANGES -->
+        <section id="changes">
+            <h2><span class="num">9</span> Changes to This Policy</h2>
+            <p>
+                We may update this Privacy Policy from time to time. When we make significant changes, we will update the
+                "Effective Date" at the top of this page. We encourage you to review this policy periodically.
+                Continued use of the App after changes constitutes acceptance of the updated policy.
+            </p>
+        </section>
+
+        <!-- 10. CONTACT -->
+        <section id="contact">
+            <h2><span class="num">10</span> Contact Us</h2>
+            <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our data practices, please contact us:</p>
+
+            <div class="info-card">
+                <h4><span class="icon">✉️</span> Email</h4>
+                <p><a href="mailto:pmkha92@gmail.com">pmkha92@gmail.com</a></p>
+            </div>
+
+            <p>We aim to respond to all privacy-related inquiries within 48 hours.</p>
+        </section>
+
+    </main>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer>
+        <img src="assets/512.png" alt="Velora Camera" class="footer-logo">
+        <p>© 2026 Velora Camera. All rights reserved.</p>
+        <p style="font-size: 12px; color: var(--text-muted);">Designed with ❤️ for photographers & creators</p>
+        <div class="links">
+            <a href="#">Terms of Service</a>
+            <a href="#">Support</a>
+            <a href="#">App Store</a>
+        </div>
+    </footer>
+
+</body>
+</html>
